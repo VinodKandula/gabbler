@@ -12,9 +12,10 @@ object Build extends Build {
         Dependency.Compile.akkaActor,
         Dependency.Compile.akkaSlf4j,
         Dependency.Compile.logbackClassic,
-        Dependency.Compile.sprayCan,
-        Dependency.Compile.sprayJson,
-        Dependency.Compile.sprayRouting
+        Dependency.Compile.sprayCan excludeAll( ExclusionRule(organization="org.parboiled",name="parboiled-scala_2.10.0-RC5") ),
+        Dependency.Compile.sprayJson excludeAll( ExclusionRule(organization="org.parboiled",name="parboiled-scala_2.10.0-RC5") ),
+        Dependency.Compile.sprayRouting excludeAll( ExclusionRule(organization="org.parboiled",name="parboiled-scala_2.10.0-RC5") ),
+        "org.parboiled" %% "parboiled-scala" % "1.1.4"
       )
     )
   )
@@ -47,7 +48,7 @@ object Build extends Build {
 
   object Version {
     val akka = "2.1.2"
-    val scala = "2.10.1"
+    val scala = "2.10.4"
     val spray = "1.1-M7"
   }
 
